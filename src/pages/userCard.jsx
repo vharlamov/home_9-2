@@ -18,13 +18,14 @@ const UserCard = ({ state }) => {
 				<div className='col-md-8 offset-md-3 shadow p-4'>
 					<h1>Карточка студента</h1>
 					{isEmpty ? (
-						<h2>Нет данных</h2>
+						<h3>Нет данных</h3>
 					) : (
 						<>
-							<h2>Имя: {state.firstName.value}</h2>
-							<h2>Фамилия: {state.lastName.value}</h2>
-							<h2>Год рождения: {state.birthYear.value}</h2>
-							<h2>Портфолио: {state.portfolio.value}</h2>
+							{Object.keys(state).map((field) => (
+								<h3 key={field}>
+									{state[field].label}: {state[field].value}
+								</h3>
+							))}
 						</>
 					)}
 					<button
