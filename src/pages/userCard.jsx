@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router'
+import PropTypes from 'prop-types'
 
 const UserCard = ({ state }) => {
 	const history = useHistory()
@@ -38,6 +39,10 @@ const UserCard = ({ state }) => {
 			</div>
 		</div>
 	)
+}
+
+UserCard.propTypes = {
+	state: PropTypes.object,
 }
 
 export default UserCard

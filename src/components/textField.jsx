@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const TextField = ({ name, label, value, onChange, error }) => {
 	const getInputClasses = () => {
@@ -22,6 +23,14 @@ const TextField = ({ name, label, value, onChange, error }) => {
 			</div>
 		</div>
 	)
+}
+
+TextField.propTypes = {
+	name: PropTypes.string,
+	label: PropTypes.string,
+	value: PropTypes.string,
+	onChange: PropTypes.func,
+	error: PropTypes.string,
 }
 
 export default TextField

@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router'
 import TextField from '../components/textField'
+import PropTypes from 'prop-types'
 
 const Form = ({ inputs, onChange, isError, errors }) => {
 	const history = useHistory()
@@ -42,6 +43,13 @@ const Form = ({ inputs, onChange, isError, errors }) => {
 			</div>
 		</div>
 	)
+}
+
+Form.propTypes = {
+	inputs: PropTypes.object,
+	onChange: PropTypes.func,
+	isError: PropTypes.bool,
+	errors: PropTypes.object,
 }
 
 export default Form
